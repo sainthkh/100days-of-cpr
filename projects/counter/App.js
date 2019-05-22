@@ -22,8 +22,12 @@ export default function App() {
     <View style={styles.container}>
       <Text style={styles.welcome}>Simple Counter</Text>
       <Text style={styles.instructions}>{state.count}</Text>
-      <Button onPress={() => dispatch({ type: 'increment'})} title="Inc" />
-      <Button onPress={() => dispatch({ type: 'decrement'})} title="Dec" />
+      <View style={styles.buttonsWrap}>
+        <View style={styles.buttons}>
+          <Button onPress={() => dispatch({ type: 'increment'})} title="Inc" />
+          <Button onPress={() => dispatch({ type: 'decrement'})} title="Dec" />
+        </View>
+      </View>
     </View>
   );
 }
@@ -44,5 +48,12 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: '#333333',
     marginBottom: 5,
+  },
+  buttonsWrap: {
+    height: 35,
+  },
+  buttons: {
+    flex: 1,
+    flexDirection: 'row',
   },
 });
